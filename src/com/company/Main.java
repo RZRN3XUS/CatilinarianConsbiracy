@@ -21,7 +21,7 @@ public class Main {
         System.out.println(ANSI_YELLOW + "You are the Senate in ancient Rome.");
         System.out.println(ANSI_YELLOW + "Your objective is to choose which speaker's side to agree with.");
         System.out.println(ANSI_CYAN + "To read about the actual debate, input 'info' then press enter. To reenact the debate, input 'sim' then press enter.");
-        System.out.println(ANSI_YELLOW + "The fate of Rome is in your hands.\n");
+        System.out.println(ANSI_YELLOW + "The fate of Rome is in your hands.");
         boolean val = false;
         int meme = 69;
         while (meme == 69)
@@ -52,20 +52,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.println(ANSI_PURPLE + "The day is December 5, 62 BC. Cicero has called the senate to the Temple of Concord to decide the fate of the 5 captured conspirators.");
-        b();
+        a();
         System.out.println(ANSI_BLACK + space + "Cicero argues: ");
         System.out.println(space + "a. For the Death Penalty\n" + space + "b. Against the Death Penalty");
         boolean ez1 = false;
         do {
             String i1 = sc.next();
-            if (i1.equalsIgnoreCase("a"))
+            if (i1.equalsIgnoreCase("a")) {
                 ez1 = true;
                 if (ez1 == true) {
-                    System.out.println(space + "Julius Caesar argues: ");
+                    a();
+                    System.out.println(ANSI_GREEN + space + "Correct.");
+                    System.out.println(ANSI_BLACK + space + "Julius Caesar argues: ");
                     System.out.println(space + "a. For the Death Penalty\n" + space + "b. Against the Death Penalty");
-                    String i2 = sc.next();
                     boolean ez2 = false;
                     do {
+                        String i2 = sc.next();
                         if (i1.equalsIgnoreCase("b"))
                             ez2 = true;
                         if (ez2 == true) {
@@ -75,6 +77,7 @@ public class Main {
                             score--;
                         }
                     } while (ez2 == false);
+                }
             } else {
                 System.err.println("Incorrect");
                 score--;
