@@ -43,21 +43,25 @@ public class Main {
         }
     }
 
-    private static boolean question(String question, String answer1, String answer2, char answer, Scanner scan)
+    private static void question(String question, String answer1, String answer2, char answer, Scanner scan)
     {
         System.out.println(ANSI_BLACK + "\t" + question);
         System.out.println("\ta. " + answer1 + "\t b. " + answer2);
-        String userAns = scan.next();
-        if(userAns.charAt(0) == answer)
-        {
-            System.out.println(ANSI_GREEN + "\tCorrect.");
-            return true;
+        String userAns;
+        do {
+            userAns = scan.next();
+            if(userAns.charAt(0) == answer)
+            {
+                System.out.println(ANSI_GREEN + "\tCorrect.");
+            }
+            else
+            {
+                System.err.println("\tIncorrect.");
+                score--;
+            }
+
         }
-        else
-        {
-            System.err.println("\tIncorrect.");
-            return false;
-        }
+        while(userAns.charAt(0) != answer);
     }
 
     private static void sim() throws InterruptedException {
@@ -70,39 +74,16 @@ public class Main {
         System.out.println();
         System.out.println(ANSI_PURPLE + "The day is December 5, 62 BC. Cicero has called the senate to the Temple of Concord to decide the fate of the 5 captured conspirators.");
         a();
-        if(!(question("Cicero argues:", "Against the death penalty", "In favor of the death penalty", 'b', sc)))
-        {
-            score--;
-        }
-        if(!(question("Caesar argues:", "Against the death penalty", "In favor of the death penalty", 'a', sc)))
-        {
-            score--;
-        }
-        if(!(question("Caesar proposes:", "That the conspirators be imprisoned for life, and their property confiscated", "The conspirators exiled for life, and their property auctioned off", 'a', sc)))
-        {
-            score--;
-        }
-        System.out.println(space + "Respectable criminals were normally sent into exile. This was not a viable option because they would simply join the rebel army at Faesulae, as Catiline had done");
-        if(!(question("Nero proposes:", "That the conspirators should be enlisted in the Roman army to help quell the rebellion that Catiline is leading", "That the decision should be postponed until the Roman Army squashes Catiline and his rebellion", 'b', sc)))
-        {
-            score--;
-        }
-        if(!(question("Cato argues:", "Against the death penalty", "In favor of the death penalty", 'b', sc)))
-        {
-            score--;
-        }
-        if(!(question("What did the Senatum Conslutum Ultimum allow Cicero to do?", "Order the guards at the meeting to execute the conspirators right there in the temple where the meeting was held", "Bypass senate vote and instantly condemn the conspirators to execution", 'b', sc)))
-        {
-            score--;
-        }
-        if(!(question("Who escorted the conspirators to the carcer?", "The senate went as a collective group", "Cicero", 'b', sc)))
-        {
-            score--;
-        }
-        if(!(question("After the execution of the 5 conspirators, Cicero was regarded as:", "The hero, savior, and founder of the Roman Republic", "The scum of the Republic, and the crowd urged the senate by mob to exile Cicero for his terrible crimes", 'a', sc)))
-        {
-            score--;
-        }
+        question("Cicero argues:", "Against the death penalty", "In favor of the death penalty", 'b', sc);
+
+        question("Caesar argues:", "Against the death penalty", "In favor of the death penalty", 'a', sc);
+        question("Caesar proposes:", "That the conspirators be imprisoned for life, and their property confiscated", "The conspirators exiled for life, and their property auctioned off", 'a', sc);
+        System.out.println(ANSI_BLACK + space + "Respectable criminals were normally sent into exile. This was not a viable option because they would simply join the rebel army at Faesulae, as Catiline had done");
+        question("Nero proposes:", "That the conspirators should be enlisted in the Roman army to help quell the rebellion that Catiline is leading", "That the decision should be postponed until the Roman Army squashes Catiline and his rebellion", 'b', sc);
+        question("Cato argues:", "Against the death penalty", "In favor of the death penalty", 'b', sc);
+        question("What did the Senatum Conslutum Ultimum allow Cicero to do?", "Order the guards at the meeting to execute the conspirators right there in the temple where the meeting was held", "Bypass senate vote and instantly condemn the conspirators to execution", 'b', sc);
+        question("Who escorted the conspirators to the carcer?", "The senate went as a collective group", "Cicero", 'b', sc);
+        question("After the execution of the 5 conspirators, Cicero was regarded as:", "The hero, savior, and founder of the Roman Republic", "The scum of the Republic, and the crowd urged the senate by mob to exile Cicero for his terrible crimes", 'a', sc);
         System.out.println("You scored a " + score + "/8 in the simulation. Thanks for playing!");
     }
 
@@ -157,7 +138,7 @@ public class Main {
             System.out.println(ANSI_YELLOW + "The Senatum Consultum Ultimum was a policy that was of questionable legal validity. The fact that Cicero didn’t bypass the Senate's vote from the start shows that even Cicero didn’t really believe in the power of the SCU");
             System.out.println("He was aware that if he took the decisive action that he thought was necessary, he would be making himself vulnerable to being charged with putting Roman citizens to death without a trial\n");
         }
-        System.out.println(space + "Persuaded primarily by Cato's argument, the Senate agreed in overwhelming favor of the death penalty.\n");
+        System.out.println(space + ANSI_BLACK + "Persuaded primarily by Cato's argument, the Senate agreed in overwhelming favor of the death penalty.\n");
         b();
         System.out.println(ANSI_PURPLE + "Cicero personally escorted them to the carcer, where they were handed off to the executioners in the Tullianum below.\nThe 5 conspirators were strangled to death, and Cicero went to the forum to announced that the conspirators lives were over: boldy proclaiming 'vixere'.");
         b(); //Q7 - who escorted conspirators to carcer
