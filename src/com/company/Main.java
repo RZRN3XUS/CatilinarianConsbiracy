@@ -43,6 +43,23 @@ public class Main {
         }
     }
 
+    private static boolean question(String question, String answer1, String answer2, char answer, Scanner scan)
+    {
+        System.out.println(ANSI_BLACK + "\t" + question);
+        System.out.println("\ta. " + answer1 + "\t b. " + answer2);
+        String userAns = scan.next();
+        if(userAns.charAt(0) == answer)
+        {
+            System.out.println(ANSI_GREEN + "\tCorrect.");
+            return true;
+        }
+        else
+        {
+            System.err.println("\tIncorrect.");
+            return false;
+        }
+    }
+
     private static void sim() throws InterruptedException {
         System.out.print("Loading.");
         for (int i = 0; i < 8; i++) {
@@ -53,36 +70,10 @@ public class Main {
         System.out.println();
         System.out.println(ANSI_PURPLE + "The day is December 5, 62 BC. Cicero has called the senate to the Temple of Concord to decide the fate of the 5 captured conspirators.");
         a();
-        System.out.println(ANSI_BLACK + space + "Cicero argues: ");
-        System.out.println(space + "a. For the Death Penalty\n" + space + "b. Against the Death Penalty");
-        boolean ez1 = false;
-        do {
-            String i1 = sc.next();
-            if (i1.equalsIgnoreCase("a")) {
-                ez1 = true;
-                if (ez1 == true) {
-                    a();
-                    System.out.println(ANSI_GREEN + space + "Correct.");
-                    System.out.println(ANSI_BLACK + space + "Julius Caesar argues: ");
-                    System.out.println(space + "a. For the Death Penalty\n" + space + "b. Against the Death Penalty");
-                    boolean ez2 = false;
-                    do {
-                        String i2 = sc.next();
-                        if (i1.equalsIgnoreCase("b"))
-                            ez2 = true;
-                        if (ez2 == true) {
-
-                        } else {
-                            System.err.println("Incorrect");
-                            score--;
-                        }
-                    } while (ez2 == false);
-                }
-            } else {
-                System.err.println("Incorrect");
-                score--;
-            }
-        } while (ez1 == false);
+        if(!(question("Cicero argues:", "Against the death penalty", "In favor of the death penalty", 'b', sc)))
+        {
+            score--;
+        }
     }
 
     public static void info() throws InterruptedException {
