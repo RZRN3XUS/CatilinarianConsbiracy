@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 import java.lang.*;
 public class Main {
-    public static int score = 100;
+    public static int score = 7;
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -97,7 +97,7 @@ public class Main {
         System.out.println(ANSI_BLACK + "       Cicero: By their treasonous actions, these conspirators have given up their right to be treated as citizens.");
         a();
         System.out.println(ANSI_BLACK + "       During his speech, Cicero implies that the " + ANSI_CYAN + "Senatum Consultum Ultimum" + ANSI_BLACK + " gives him the authority to impose the death penalty regardless.");
-        a();
+        a(); //Q1 - Cicero stance on death penalty
         System.out.println(ANSI_CYAN + "For more information about the Senatum Consultum Ultimum, input SCU then enter. Or, type any key then enter to continue.");
         String scu = sc.next();
         if (scu.equals("SCU")) {
@@ -111,9 +111,9 @@ public class Main {
         System.out.println(ANSI_BLACK + space + "Julius Caesar: I do not fear that Cicero would do these things or that they will happen at this time; but in a great state there are many and varied characters. Perhaps at another time, when another consul had command of the army, \n       a false accusation will be believed as true. If some future consul, using our deed as an example, draws his sword in accordance with the Senate’s decree, who will impose a limit or restrain him?");
         a();
         System.out.println(space + "Julius Caesar continues to argue against the death penalty, suggesting that the conspirators be imprisoned for life, as well as confiscating all their property.");
-        a();
+        a(); //Q2 - Caesar stance on death penalty
         System.out.println(space + "Caesar agreed that they deserved harsh punishment, but that the laws protecting roman citizens must be respected.\n");
-        a();
+        a(); //Q3 - Caesar punishment idea
         System.out.println(space + "This punishment was regarded as unusual and highly impractical. Prisons were not designed for long term, let alone life time inmates.");
         a();
         System.out.println(space + "Respectable criminals were normally sent into exile. This was not a viable option because they would simply join the rebel army at Faesulae, as Catiline had done");
@@ -123,11 +123,11 @@ public class Main {
         System.out.println(space + "Tiberius Claudius Nero follows Caesar's speech.");
         a();
         System.out.println(space + "Tiberius Claudius Nero: We must postpone a decision until Catiline and his army are beaten.");
-        a();
+        a();  //Q4 - Nero idea
         System.out.println(space + "This decision was supported by many.\n");
         b();
         System.out.println(space + "Marcus Porcius Cato rebuts Nero's argument and takes Cicero's side.");
-        a();
+        a(); //Q5 - Cato stance on death penalty
         System.out.println(space + "Because of Catiline and his army who are still at large, the conspirators in the city pose a massive risk. They are going to be held outside of Rome for fear that they would be freed if kept inside of Rome anyways.\n" + space + "They would be sought after be their friends no matter where they were held. They had admitted that they were going to commit crimes such as murder, arson, and other terrible crimes, they should be punished as if they had actually committed those crimes.");
         a();
         System.out.println(space + "Cato then suggests that they send a message to Catiline by punishing the conspirators swiftly and harshly.");
@@ -135,8 +135,9 @@ public class Main {
         System.out.println(space + "With this argument, the Senate agreed in overwhelming favor of the death penalty.\n");
         b();
         System.out.println(ANSI_PURPLE + "Cicero personally escorted them to the carcer, where they were handed off to the executioners in the Tullianum below.\nThe 5 conspirators were strangled to death, and Cicero went to the forum to announced that the conspirators lives were over: 'vixere'.");
-        b();
+        b(); //Q6 - who escorted conspirators to carcer
         System.out.println("Cicero was praised, and called the savior and founder of his country. Many prominent citizens accompanied Cicero home and placed lamps and/or torches at their doors and rooftops to show appreciation\n and to honor the man who saved rome from chaos and murder without any violence or bloodshed.");
+        //Q7 - what was Cicero regarded as
         System.out.println(ANSI_GREEN + "The End.");
         a();
         System.out.println(ANSI_CYAN + "To play info again, input info then press enter. To play the debate, input sim then press enter. To exit the program, input exit then press enter.");
