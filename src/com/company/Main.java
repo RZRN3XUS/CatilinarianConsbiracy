@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 import java.lang.*;
 public class Main {
-
+    public static int score = 100;
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -23,8 +23,8 @@ public class Main {
         System.out.println(ANSI_CYAN + "To read about the actual debate, input 'info' then press enter. To reenact the debate, input 'sim' then press enter.");
         System.out.println(ANSI_YELLOW + "The fate of Rome is in your hands.\n");
         boolean val = false;
-        int meme = 0;
-        while (meme == 0)
+        int meme = 69;
+        while (meme == 69)
         {
             do {
                 String mode = sc.next();
@@ -53,15 +53,33 @@ public class Main {
         System.out.println();
         System.out.println(ANSI_PURPLE + "The day is December 5, 62 BC. Cicero has called the senate to the Temple of Concord to decide the fate of the 5 captured conspirators.");
         b();
-        System.out.print(space + "Cicero argues: ");
-        String i1 = sc.next();
-        boolean i1 = false;
+        System.out.println(ANSI_BLACK + space + "Cicero argues: ");
+        System.out.println(space + "a. For the Death Penalty\n" + space + "b. Against the Death Penalty");
+        boolean ez1 = false;
         do {
-            if ()
+            String i1 = sc.next();
+            if (i1.equalsIgnoreCase("a"))
+                ez1 = true;
+                if (ez1 == true) {
+                    System.out.println(space + "Julius Caesar argues: ");
+                    System.out.println(space + "a. For the Death Penalty\n" + space + "b. Against the Death Penalty");
+                    String i2 = sc.next();
+                    boolean ez2 = false;
+                    do {
+                        if (i1.equalsIgnoreCase("b"))
+                            ez2 = true;
+                        if (ez2 == true) {
 
-            else
+                        } else {
+                            System.err.println("Incorrect");
+                            score--;
+                        }
+                    } while (ez2 == false);
+            } else {
                 System.err.println("Incorrect");
-        } while (i1 == false);
+                score--;
+            }
+        } while (ez1 == false);
     }
 
     public static void info() throws InterruptedException {
